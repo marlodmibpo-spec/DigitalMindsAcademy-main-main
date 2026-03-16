@@ -1,0 +1,358 @@
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+body{
+background:#e5e9ef;
+}
+
+.dashboard{
+display:grid;
+grid-template-columns:250px 1fr;
+grid-template-rows:70px 1fr;
+grid-template-areas:
+"header header"
+"sidebar main";
+height:100vh;
+}
+
+/* HEADER */
+
+.header{
+grid-area:header;
+background:linear-gradient(90deg,#a6b300,#001b44);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 25px;
+color:white;
+}
+
+.logo img{
+height:40px;
+}
+
+.top-nav a{
+margin:0 15px;
+color:white;
+text-decoration:none;
+}
+
+.top-profile{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.top-profile img{
+width:35px;
+border-radius:50%;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+grid-area:sidebar;
+background:#f4f6f9;
+padding:20px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+border-right:2px solid #b0bf00;
+}
+
+.profile{
+text-align:center;
+}
+
+.profile-img{
+width:80px;
+border-radius:50%;
+border:3px solid #b0bf00;
+margin-bottom:10px;
+}
+
+.menu{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-top:20px;
+}
+
+.menu a{
+padding:10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.menu a.active{
+background:#b0bf00;
+}
+
+.logout{
+padding:10px;
+border:none;
+background:#d9e1a5;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* MAIN */
+
+.main{
+grid-area:main;
+padding:25px;
+overflow:auto;
+}
+
+/* PROFILE OVERVIEW */
+
+.profile-overview{
+background:white;
+border:2px solid #b0bf00;
+border-radius:10px;
+padding:20px;
+margin-bottom:20px;
+}
+
+.overview-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:20px;
+margin-top:15px;
+}
+
+.user-box{
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.user-box img{
+width:60px;
+border-radius:50%;
+}
+
+.leaderboard{
+text-align:center;
+border-left:1px solid #ddd;
+border-right:1px solid #ddd;
+padding:10px;
+}
+
+.rank{
+background:#e7efb5;
+padding:8px;
+border-radius:6px;
+}
+
+.stats div{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#f4f6f9;
+padding:10px;
+margin-bottom:10px;
+border-radius:6px;
+}
+
+/* PROFILE INFO */
+
+.profile-info{
+background:white;
+border:2px solid #b0bf00;
+border-radius:10px;
+padding:20px;
+}
+
+.profile-header{
+display:flex;
+justify-content:space-between;
+margin-bottom:20px;
+}
+
+.edit-btn{
+background:#b0bf00;
+border:none;
+padding:8px 12px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.profile-body{
+display:flex;
+gap:30px;
+}
+
+.profile-picture{
+text-align:center;
+}
+
+.profile-picture img{
+width:120px;
+border-radius:50%;
+border:4px solid #b0bf00;
+}
+
+.upload-btn{
+margin-top:10px;
+background:#b0bf00;
+border:none;
+padding:6px 10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.profile-form{
+flex:1;
+}
+
+.form-row{
+display:flex;
+gap:20px;
+}
+
+.profile-form input{
+width:100%;
+padding:8px;
+margin-top:5px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+.form-actions{
+display:flex;
+justify-content:flex-end;
+gap:10px;
+}
+
+.save{
+background:#b0bf00;
+border:none;
+padding:8px 15px;
+border-radius:6px;
+}
+
+.cancel{
+background:#ccc;
+border:none;
+padding:8px 15px;
+border-radius:6px;
+}
+
+.menu a{
+display:flex;
+align-items:center;
+gap:10px;
+padding:10px;
+border-radius:6px;
+text-decoration:none;
+color:#333;
+transition:0.2s;
+}
+
+.menu a:hover{
+background:#e8efb0;
+}
+
+.menu a.active{
+background:#b0bf00;
+color:#000;
+font-weight:600;
+}
+
+/* MAIN PROFILE CENTER */
+
+.main{
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(90deg,#e8ebc6,#f3f4e5);
+padding:40px;
+}
+
+
+/* PROFILE CARD */
+
+.profile-card{
+width:360px;
+background:white;
+border-radius:10px;
+border:2px solid #b0bf00;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+overflow:hidden;
+}
+
+
+/* CARD HEADER */
+
+.card-header{
+background:linear-gradient(90deg,#001b44,#b0bf00);
+padding:10px 15px;
+color:white;
+font-size:14px;
+}
+
+
+/* CARD BODY */
+
+.card-body{
+padding:25px;
+text-align:center;
+}
+
+
+/* PROFILE IMAGE */
+
+.profile-pic{
+width:90px;
+height:90px;
+border-radius:50%;
+border:4px solid #b0bf00;
+margin-bottom:20px;
+}
+
+
+/* FORM GROUP */
+
+.form-group{
+text-align:left;
+margin-bottom:15px;
+}
+
+.form-group label{
+font-size:12px;
+color:#555;
+}
+
+.form-group input{
+width:100%;
+padding:8px;
+border:1px solid #b0bf00;
+border-radius:4px;
+margin-top:4px;
+}
+
+
+/* BUTTON */
+
+.change-btn{
+margin-top:10px;
+background:#b0bf00;
+border:none;
+padding:8px 15px;
+color:white;
+border-radius:4px;
+cursor:pointer;
+font-size:12px;
+}
+
+.change-btn:hover{
+background:#95a600;
+}

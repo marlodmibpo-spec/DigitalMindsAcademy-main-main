@@ -1,0 +1,500 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root{
+  --primary:#b0bf00;
+  --primary-dark:#9aa600;
+  --navy:#0f1c36;
+  --bg:#f7f8f5;
+  --card:#ffffff;
+  --muted:#6c6c6c;
+  --border:#dfe4dd;
+  --shadow:0 12px 35px rgba(0,0,0,0.08);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:"Poppins",sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:#2f2f2f;
+}
+
+.app{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 26px;
+  background:linear-gradient(90deg,#b4c600 0%,#2d3d33 100%);
+  color:#fff;
+  border-radius:0 0 24px 24px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.brand img{
+  height:48px;
+}
+
+.top-links{
+  display:flex;
+  gap:26px;
+  font-weight:600;
+}
+
+.top-links a{
+  color:#fff;
+  text-decoration:none;
+  letter-spacing:0.2px;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:24px;
+  padding:22px 26px 30px;
+  flex:1;
+}
+
+.sidebar{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+  box-shadow:var(--shadow);
+}
+
+.profile-card{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.avatar-ring{
+  width:92px;
+  height:92px;
+  border-radius:50%;
+  padding:5px;
+  background:linear-gradient(145deg,#dfe6b4,#b2c600);
+  margin:0 auto;
+}
+
+.avatar-ring img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid #fff;
+}
+
+.profile-card .name{
+  font-weight:700;
+  font-size:15px;
+}
+
+.profile-card .email{
+  font-size:12px;
+  color:var(--muted);
+  word-break:break-word;
+}
+
+.menu{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.menu a{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 14px;
+  border-radius:10px;
+  color:#3a3a3a;
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.15s ease;
+}
+
+.menu a:hover{
+  background:#eef2d2;
+}
+
+.menu a.active{
+  background:var(--primary);
+  color:#fff;
+  box-shadow:0 8px 20px rgba(176,191,0,0.35);
+}
+
+.logout{
+  margin-top:auto;
+  width:100%;
+  padding:13px 14px;
+  border:none;
+  border-radius:12px;
+  background:#eef2d2;
+  color:#3b3b3b;
+  font-weight:700;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  transition:background 0.2s ease;
+}
+
+.logout:hover{
+  background:var(--primary);
+  color:#fff;
+}
+
+.main{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px 26px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.page-title h1{
+  font-size:30px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+.overview-grid{
+  display:grid;
+  grid-template-columns:1.6fr 0.9fr 1fr;
+  gap:18px;
+}
+
+.summary-card{
+  grid-column:1 / span 2;
+  background:linear-gradient(180deg,#fdfdf9 0%,#f6f8e9 100%);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.summary-person{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.summary-person img{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid var(--primary);
+  box-shadow:0 10px 20px rgba(0,0,0,0.12);
+}
+
+.summary-name{
+  font-size:20px;
+  font-weight:700;
+}
+
+.summary-email{
+  color:var(--muted);
+  font-weight:500;
+  font-size:13px;
+}
+
+.summary-meta{
+  display:flex;
+  gap:16px;
+  margin-top:6px;
+  color:#505050;
+  font-size:13px;
+  flex-wrap:wrap;
+}
+
+.summary-meta i{
+  color:var(--primary);
+  margin-right:6px;
+}
+
+.stat-row{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:12px;
+}
+
+.stat-pill{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:10px;
+  padding:12px 14px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 8px 18px rgba(0,0,0,0.06);
+}
+
+.pill-icon{
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  background:#e3e9b8;
+  color:#2f2f2f;
+  display:grid;
+  place-items:center;
+  font-size:16px;
+}
+
+.pill-icon.trophy{
+  color:#c9a006;
+  background:#f5e7b8;
+}
+
+.pill-label{
+  font-weight:600;
+  color:#4a4a4a;
+  font-size:14px;
+}
+
+.pill-value{
+  font-weight:800;
+  font-size:18px;
+  color:#2f2f2f;
+}
+
+.chart-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.chart-card .card-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-weight:700;
+  color:#3a3a3a;
+}
+
+.chart-card .legend{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  font-size:13px;
+  color:#4c4c4c;
+}
+
+.dot{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  margin-right:6px;
+}
+
+.dot-complete{background:var(--primary);}
+.dot-progress{background:var(--navy);}
+.dot-attempt{background:#0f213f;}
+.dot-correct{background:var(--primary);}
+.dot-wrong{background:#e63e3e;}
+
+.chart-wrap{
+  position:relative;
+  min-height:220px;
+}
+
+.completion-card .chart-wrap{
+  min-height:200px;
+  display:grid;
+  place-items:center;
+}
+
+.leaderboard-card{
+  grid-column:3;
+}
+
+.leaderboard{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.leaderboard li{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#f7faeb;
+  box-shadow:0 6px 16px rgba(0,0,0,0.05);
+  font-weight:600;
+  color:#3c3c3c;
+}
+
+.leaderboard li .rank{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  color:#3b3b3b;
+  margin-right:10px;
+}
+
+.leaderboard li .info{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:1;
+}
+
+.leaderboard li .name{
+  font-weight:700;
+  font-size:14px;
+}
+
+.leaderboard li .points{
+  font-weight:800;
+  color:#3a3a3a;
+}
+
+.medal-gold{background:linear-gradient(135deg,#f6d861,#d3a400);}
+.medal-silver{background:linear-gradient(135deg,#e2e6ec,#aab0bc);}
+.medal-bronze{background:linear-gradient(135deg,#e7b98c,#b87333);}
+
+.wide{
+  grid-column:1 / span 3;
+}
+
+@media (max-width:1200px){
+  .overview-grid{
+    grid-template-columns:1fr;
+  }
+  .summary-card,
+  .leaderboard-card,
+  .wide{
+    grid-column:1 / span 1;
+  }
+}
+
+@media (max-width:900px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+  .sidebar{
+    flex-direction:row;
+    align-items:center;
+    gap:18px;
+  }
+  .menu{
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+  .logout{
+    max-width:180px;
+    margin:0;
+  }
+}
+
+/* Logout overlay (shared) */
+.logout-overlay{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.24);
+  backdrop-filter:blur(4px);
+  z-index:1200;
+}
+.logout-overlay.visible{
+  display:flex;
+}
+.logout-overlay .card{
+  background:#fbfbf8;
+  border:2px solid #bcc300;
+  border-radius:12px;
+  padding:18px 22px;
+  box-shadow:0 18px 38px rgba(0,0,0,0.22);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:240px;
+}
+.logout-overlay .confirm-card{
+  flex-direction:column;
+  align-items:flex-start;
+  gap:14px;
+}
+.logout-actions{
+  display:flex;
+  gap:10px;
+  width:100%;
+  justify-content:flex-end;
+}
+.btn-secondary,
+.btn-primary{
+  padding:10px 16px;
+  border-radius:8px;
+  border:1px solid transparent;
+  cursor:pointer;
+  font-weight:700;
+}
+.btn-secondary{
+  background:#e6e6e6;
+  color:#4a4a4a;
+}
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary-dark);
+}
+.logout-overlay .working-card{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.logout-overlay .spinner{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  border:3px solid #d9e1a5;
+  border-top-color:var(--primary);
+  animation:spin 0.9s linear infinite;
+}
+.logout-overlay .text{
+  font-weight:700;
+  color:#4a4a4a;
+}
+.is-logging-out .app{
+  filter:blur(2px);
+  pointer-events:none;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}

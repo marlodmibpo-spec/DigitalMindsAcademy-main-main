@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Management</title>
+
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="usermanagement.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="profileInfo.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- HEADER -->
+<header class="header">
+
+<div class="logo">
+<img src="images/dmilogo.png">
+</div>
+
+</header>
+
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+<div class="profile">
+<img src="images/logo-user-inteface.png" class="profile-img">
+  <div class="profile-info">
+    <h3 id="profile-name"></h3>
+    <p id="profile-email"></p>
+  </div>
+</div>
+
+
+<nav class="menu">
+
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+
+<a class="active" href="usermanagement.html">
+<i class="fa-solid fa-users"></i>
+User Management
+</a>
+
+<a href="coursemanagement.html">
+<i class="fa-solid fa-graduation-cap"></i>
+Course Management
+</a>
+
+<a href="useract.html">
+<i class="fa-solid fa-file"></i>
+Uploaded Activities
+</a>
+
+<a href="newsupdate.html">
+<i class="fa-solid fa-plus"></i>
+News Updates
+</a>
+
+</nav>
+
+<button class="logout">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</button>
+
+</aside>
+
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+<h1 class="page-title">User Management</h1>
+
+
+<!-- CONTROLS -->
+<div class="controls">
+
+<div class="search-box">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input type="text" placeholder="Search users">
+</div>
+
+<button class="filter">
+<i class="fa-solid fa-filter"></i> Filter
+</button>
+
+<button class="add-user">
+<i class="fa-solid fa-user-plus"></i> Add User
+</button>
+
+</div>
+
+
+<!-- USER TABLE -->
+<div class="table-container">
+
+<table id="userTable">
+
+<thead>
+
+<tr>
+<th></th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Role</th>
+<th>Status</th>
+<th>Joined Date</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<!-- Empty table (data will be inserted later) -->
+
+</tbody>
+
+</table>
+
+</div>
+
+</main>
+
+</div>
+
+<!-- ADD USER MODAL -->
+<div id="addUserModal" class="modal">
+
+<div class="modal-content">
+
+<div class="modal-heading">
+  <h2>Add New User</h2>
+</div>
+
+<div class="modal-body">
+
+<!-- LEFT FORM -->
+<div class="form-section">
+
+<div class="row">
+
+<div class="input-group">
+<label>First Name</label>
+<div class="input-icon">
+<i class="fa fa-user" aria-hidden="true"></i>
+<input type="text" id="firstName" placeholder="Alden">
+ </div>
+</div>
+
+<div class="input-group">
+<label>Last Name</label>
+<div class="input-icon">
+<i class="fa fa-user" aria-hidden="true"></i>
+<input type="text" id="lastName" placeholder="Recharge">
+</div>
+</div>
+
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<div class="input-icon">
+<i class="fa fa-envelope"></i>
+<input type="email" id="email" placeholder="alden.recharge.dmibpo@gmail.com">
+</div>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<div class="input-icon">
+<i class="fa fa-lock"></i>
+<input type="password" id="password" placeholder="********">
+</div>
+</div>
+
+<div class="input-group">
+<label>Confirm Password</label>
+<div class="input-icon">
+<i class="fa fa-lock"></i>
+<input type="password" id="confirmPassword" placeholder="********">
+</div>
+</div>
+
+<div class="input-group">
+<label>Role</label>
+<div class="input-icon">
+<i class="fa fa-user-shield"></i>
+<input type="text" id="role" value="Employee" readonly>
+</div>
+</div>
+
+</div>
+
+<!-- RIGHT IMAGE -->
+<div class="upload-section">
+
+<div class="upload-preview">
+<i class="fa fa-image"></i>
+<i class="fa fa-plus plus"></i>
+</div>
+
+<input type="file" id="photoUpload">
+
+<button class="upload-btn">Upload Photo</button>
+<p class="upload-hint">PNG or JPG up to 2MB</p>
+
+</div>
+
+</div>
+
+<div class="modal-actions">
+
+<button class="cancel-btn" id="cancelModal">Cancel</button>
+<button class="save-btn">Save</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabaseClient.js"></script>
+<script src="profileInfo.js"></script>
+<script src="logout.js" defer></script>
+<script src="usermanagement.js"></script>
+
+</body>
+</html>

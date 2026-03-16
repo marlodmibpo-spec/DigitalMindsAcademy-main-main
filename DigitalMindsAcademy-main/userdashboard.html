@@ -1,0 +1,189 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Dashboard</title>
+
+<link rel="stylesheet" href="userdashboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="logo">
+<img src="images/dmilogo.png">
+</div>
+
+<nav class="top-nav">
+<a href="#">User Guide</a>
+<a href="#">Courses</a>
+</nav>
+
+</header>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<div class="profile">
+
+<img src="images/profile.png" class="profile-img">
+
+<h3>Alden Recharge</h3>
+<p>alden.r@dmibpo.com</p>
+
+</div>
+
+
+<nav class="menu">
+
+<a class="active" href="#">
+<i class="fa fa-chart-line"></i>
+Dashboard
+</a>
+
+<a href="useract2.html">
+<i class="fa fa-file"></i>
+Activities
+</a>
+
+<a href="usercert.html">
+<i class="fa fa-certificate"></i>
+Certificates
+</a>
+
+<a href="userprofile.html">
+<i class="fa fa-user"></i>
+Profile
+</a>
+
+</nav>
+
+<button class="logout">
+<i class="fa fa-right-from-bracket"></i>
+Logout
+</button>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+<h2 class="page-title">Dashboard</h2>
+
+<div class="dashboard-grid">
+
+<!-- LEFT SIDE -->
+
+<div class="left-panel">
+
+<!-- USER INFO -->
+
+<div class="user-card">
+
+<img src="images/profile.png">
+
+<div>
+
+<h3>Alden Recharge</h3>
+<p>alden.r@dmibpo.com</p>
+
+<div class="meta">
+<span>Joined: March 22, 2026</span>
+<span>Role: Employee</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat-box">
+<i class="fa fa-shield"></i>
+<div>
+<p>Courses Completed</p>
+<strong id="coursesCompleted"></strong>
+</div>
+</div>
+
+<div class="stat-box">
+<i class="fa fa-trophy"></i>
+<div>
+<p>Certificates</p>
+<strong id="certificates"></strong>
+</div>
+</div>
+
+</div>
+
+
+<!-- CHART -->
+
+<div class="chart-card">
+
+<h4>Assessments Score</h4>
+
+<canvas id="assessmentChart"></canvas>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="right-panel">
+
+<div class="completion-card">
+
+<h4>Course Completion</h4>
+
+<canvas id="completionChart"></canvas>
+
+</div>
+
+
+<div class="leaderboard">
+
+<h4>Leaderboard</h4>
+
+<ul id="leaderboardList"></ul>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<script src="userdashboard.js"></script>
+
+</body>
+</html>

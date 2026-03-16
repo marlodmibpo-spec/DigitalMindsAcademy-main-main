@@ -1,0 +1,6 @@
+[functions.admin-signup]
+verify_jwt = false
+
+[functions.list-employees]
+# Let the function handle auth/role checks so CORS preflight (no Authorization header) succeeds.
+verify_jwt = false

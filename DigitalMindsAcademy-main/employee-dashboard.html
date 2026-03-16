@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Dashboard | DigitalMinds Academy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="employee-dashboard.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="supabaseClient.js"></script>
+    <script src="logout.js" defer></script>
+    <script src="employee-dashboard.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <img src="images/dmiacademylogo.png" alt="DigitalMinds Academy" />
+        </div>
+        <nav class="top-links">
+          <a href="#">User Guide</a>
+          <a href="#">Courses</a>
+        </nav>
+      </header>
+
+      <div class="layout">
+        <aside class="sidebar">
+          <div class="profile-card">
+            <div class="avatar-ring">
+              <img
+                id="sidebar-avatar"
+                src="images/profile.png"
+                alt="Profile photo"
+              />
+            </div>
+            <div class="name" id="sidebar-name">Alden Recharge</div>
+            <div class="email" id="sidebar-email">a.recharge.dmibpo@gmail.com</div>
+          </div>
+
+          <nav class="menu">
+            <a class="active" href="#">
+              <i class="fa-solid fa-image"></i>
+              <span>Dashboard</span>
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-clipboard-list"></i>
+              <span>Activities</span>
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Certificates</span>
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-user"></i>
+              <span>Profile</span>
+            </a>
+          </nav>
+
+          <button class="logout" type="button">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </button>
+        </aside>
+
+        <main class="main">
+          <div class="page-title">
+            <h1>Dashboard</h1>
+          </div>
+
+          <section class="overview-grid">
+            <div class="summary-card">
+              <div class="summary-person">
+                <img
+                  id="hero-avatar"
+                  src="images/profile.png"
+                  alt="Profile photo"
+                />
+                <div>
+                  <div class="summary-name" id="hero-name">Alden Recharge</div>
+                  <div class="summary-email" id="hero-email">
+                    a.recharge.dmibpo@gmail.com
+                  </div>
+                  <div class="summary-meta">
+                    <span>
+                      <i class="fa-solid fa-calendar-days"></i>
+                      <span id="hero-joined">Joined: March 22, 2026</span>
+                    </span>
+                    <span>
+                      <i class="fa-regular fa-id-badge"></i>
+                      <span id="hero-role">Role: Employee</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-row">
+                <div class="stat-pill">
+                  <div class="pill-icon">
+                    <i class="fa-regular fa-circle-check"></i>
+                  </div>
+                  <div class="pill-label">Courses Completed</div>
+                  <div class="pill-value" id="stat-courses">12</div>
+                </div>
+                <div class="stat-pill">
+                  <div class="pill-icon trophy">
+                    <i class="fa-solid fa-trophy"></i>
+                  </div>
+                  <div class="pill-label">Certificates</div>
+                  <div class="pill-value" id="stat-certificates">12</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-card completion-card">
+              <div class="card-header">
+                <span>Course Completion</span>
+              </div>
+              <div class="chart-wrap">
+                <canvas id="completionChart" width="220" height="220"></canvas>
+              </div>
+              <div class="legend">
+                <span><span class="dot dot-complete"></span>Completed</span>
+                <span><span class="dot dot-progress"></span>In Progress</span>
+              </div>
+            </div>
+
+            <div class="chart-card leaderboard-card">
+              <div class="card-header">
+                <span>Leaderboard</span>
+              </div>
+              <ol class="leaderboard" id="leaderboard"></ol>
+            </div>
+
+            <div class="chart-card wide">
+              <div class="card-header">
+                <span>Assessments Score</span>
+                <div class="legend">
+                  <span><span class="dot dot-attempt"></span>Attempt</span>
+                  <span><span class="dot dot-correct"></span>Correct</span>
+                  <span><span class="dot dot-wrong"></span>Wrong</span>
+                </div>
+              </div>
+              <div class="chart-wrap">
+                <canvas id="scoreChart" height="320"></canvas>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalMinds Admin Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="supabaseClient.js"></script>
+    <script src="logout.js" defer></script>
+    <script src="dashboard.js" defer></script>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="dashboard">
+<!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <img src="images/dmilogo.png">
+    </div>
+  </header>
+
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+<div class="profile">
+
+<img src="images/logo-user-inteface.png" class="profile-img">
+
+<div class="profile-info">
+  <h3 id="profile-name"></h3>
+  <p id="profile-email"></p>
+</div>
+
+</div>
+
+
+<nav class="menu">
+
+<a class="active" href="#">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+
+<a href="usermanagement.html">
+<i class="fa-solid fa-users"></i>
+User Management
+</a>
+
+<a href="coursemanagement.html">
+<i class="fa-solid fa-graduation-cap"></i>
+Course Management
+</a>
+
+<a href="useract.html">
+<i class="fa-solid fa-file"></i>
+Uploaded Activities
+</a>
+
+<a href="newsupdate.html">
+<i class="fa-solid fa-plus"></i>
+News Updates
+</a>
+
+</nav>
+
+<button class="logout" type="button">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</button>
+
+</aside>
+
+
+<!-- MAIN -->
+<main class="main">
+
+
+<!-- STAT CARDS -->
+<div class="stats">
+
+<div class="card users">
+
+<h3>Total Users</h3>
+<h1></h1>
+
+<div class="mini-stats">
+
+<div>
+<p>Active users</p>
+<span></span>
+</div>
+
+<div>
+<p>Inactive users</p>
+<span></span>
+</div>
+
+<div>
+<p>New users</p>
+<span></span>
+</div>
+
+</div>
+
+</div>
+
+<div class="card course">
+
+<h3>Total Course Taken</h3>
+<h1></h1>
+
+<div class="mini-stats">
+
+<div>
+<p>Completed</p>
+<span></span>
+</div>
+
+<div>
+<p>In Progress</p>
+<span></span>
+</div>
+
+<div>
+<p>Failed</p>
+<span></span>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card quiz">
+
+<h3>Total Quiz Taken</h3>
+<h1></h1>
+
+<div class="mini-stats">
+
+<div>
+<p>Passed</p>
+<span></span>
+</div>
+
+<div>
+<p>Failed</p>
+<span></span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CHARTS -->
+<div class="charts">
+
+<div class="chart-card">
+<h3>Proficiency Tally</h3>
+<canvas id="barChart"></canvas>
+</div>
+
+<div class="chart-card pie">
+<h3>Course Completion</h3>
+<canvas id="pieChart"></canvas>
+</div>
+
+</div>
+
+
+
+<!-- LEADERBOARD -->
+<div class="leaderboard">
+<h2>Leaderboard</h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Total Score</th>
+</tr>
+</thead>
+
+
+<tbody>
+
+<!-- Rows will be injected dynamically -->
+
+</tbody>
+
+</table>
+
+</div>
+
+
+</main>
+
+</div>
+</body>
+</html>

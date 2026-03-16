@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Course Management</title>
+
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="coursemanagement.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabaseClient.js"></script>
+<script src="logout.js" defer></script>
+<script src="profileInfo.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="dashboard">
+
+<!-- HEADER -->
+<header class="header">
+
+<div class="logo">
+<img src="images/dmilogo.png">
+</div>
+
+</header>
+
+
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+
+<a href="coursemanagement.html" class="profile" style="text-decoration: none; color: inherit;">
+  <img src="images/logo-user-inteface.png" class="profile-img">
+  <div class="profile-info">
+    <h3 id="profile-name"></h3>
+    <p id="profile-email"></p>
+  </div>
+</a>
+
+
+
+<nav class="menu">
+
+<a href="dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+
+<a href="usermanagement.html">
+<i class="fa-solid fa-users"></i>
+User Management
+</a>
+
+<a class="active" href="coursemanagement.html">
+<i class="fa-solid fa-graduation-cap"></i>
+Course Management
+</a>
+
+<a href="useract.html">
+<i class="fa-solid fa-file"></i>
+Uploaded Activities
+</a>
+
+<a href="newsupdate.html">
+<i class="fa-solid fa-plus"></i>
+News Updates
+</a>
+
+</nav>
+
+
+<button class="logout">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</button>
+
+</aside>
+
+
+
+<!-- MAIN -->
+<main class="main">
+
+<h1 class="page-title">Course Management</h1>
+
+
+
+<!-- TOP BAR -->
+
+<div class="course-controls">
+
+<div class="search-box">
+<i class="fa fa-search"></i>
+<input type="text" placeholder="Search courses">
+</div>
+
+
+<select class="course-filter">
+<option>All Course</option>
+<option>Published</option>
+<option>Draft</option>
+</select>
+
+
+<button class="add-course">
+<i class="fa fa-plus"></i>
+Add Course
+</button>
+
+</div>
+
+
+
+<!-- COURSE GRID -->
+
+<div class="course-grid" id="courseGrid">
+
+<!-- Courses will be added here dynamically -->
+
+</div>
+
+
+
+</main>
+
+</div>
+
+<!-- ADD COURSE MODAL -->
+<div id="addCourseModal" class="modal">
+
+<div class="modal-content course-modal">
+
+  <h2>Add Course</h2>
+
+  <div class="modal-body course-modal-body">
+
+    <div class="upload-section large">
+      <label class="upload-dropzone" for="courseImage">
+        <i class="fa fa-image"></i>
+        <span class="upload-label">Upload File</span>
+        <small>Drag & drop or click to upload</small>
+      </label>
+      <input type="file" id="courseImage" accept="image/*">
+    </div>
+
+    <div class="form-section course-form">
+      <div class="input-group">
+        <label>Course Title</label>
+        <input type="text" id="courseTitle" placeholder="Work Smarter: Essential Computer Shortcut Keys">
+      </div>
+
+      <div class="input-group">
+        <label>Description</label>
+        <textarea id="courseDescription" rows="4" placeholder="This lesson is designed to help learners improve productivity by mastering essential keyboard shortcuts for text editing, Windows navigation, file management, and browser controls to support faster and more efficient computer use."></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Assessment Type</label>
+        <div class="assessment-list">
+          <label><input type="checkbox" id="assessmentQuiz" checked> Quiz</label>
+          <label><input type="checkbox" id="assessmentActivity"> Activity</label>
+        </div>
+      </div>
+
+      <div class="status-row">
+        <label class="toggle-label">
+          <span class="pill-toggle">
+            <input type="checkbox" id="courseStatusToggle" checked>
+            <span class="pill-slider"></span>
+          </span>
+          <div class="status-text">
+            <strong>Published</strong>
+            <small>Visible to participants when enabled</small>
+          </div>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="modal-actions">
+    <button class="cancel-btn" id="closeCourseModal">Cancel</button>
+    <button class="save-btn" id="saveCourse">Save</button>
+  </div>
+
+</div>
+
+</div>
+
+<!-- EDIT QUIZ MODAL -->
+
+<div id="quizModal" class="quiz-modal">
+
+<div class="quiz-modal-content">
+
+<!-- LEFT SIDEBAR -->
+<div class="quiz-left">
+
+<button class="add-question-btn">
++ Add Question
+</button>
+
+<div class="question-list" id="questionList">
+
+<!-- Questions appear here -->
+
+</div>
+
+</div>
+
+
+<!-- CENTER EDITOR -->
+<div class="quiz-center">
+
+<select id="questionType">
+<option>Multiple Choice</option>
+<option>Identification</option>
+<option>True or False</option>
+</select>
+
+<textarea id="questionText" placeholder="Type your question here..."></textarea>
+
+<select id="questionPoints">
+<option value="1">1 Point</option>
+<option value="2">2 Points</option>
+<option value="5">5 Points</option>
+<option value="10">10 Points</option>
+</select>
+
+
+<div class="quiz-buttons">
+
+<button class="cancel-quiz">Cancel</button>
+<button class="save-draft">Save Draft</button>
+<button class="publish-quiz">Publish Quiz</button>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SETTINGS -->
+<div class="quiz-right">
+
+<h3>Quiz Settings</h3>
+
+<div class="setting-group">
+    <label for="timeLimitRange">Time Limit: <span id="timeLimitValue">15s</span></label>
+    <input type="range" id="timeLimitRange" min="5" max="30" value="15">
+</div>
+
+<div class="setting-group">
+    <label for="passingScoreRange">Passing Score: <span id="passingScoreValue">50%</span></label>
+    <input type="range" id="passingScoreRange" min="0" max="100" value="50">
+</div>
+
+<h3>Options</h3>
+
+<label>
+<input type="checkbox"> Shuffle Questions
+</label>
+
+<label>
+<input type="checkbox"> Shuffle Answer Choices
+</label>
+
+<label>Max Attempts</label>
+
+<select>
+<option>1 Attempt</option>
+<option>2 Attempts</option>
+<option>3 Attempts</option>
+<option>Unlimited</option>
+</select>
+
+
+<h3>Availability</h3>
+
+<label>Hide Answers</label>
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+
+<label>Show Answers</label>
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="coursemanagement.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="supabaseClient.js"></script>
+<script src="profileInfo.js"></script>
+
+</body>
+</html>
