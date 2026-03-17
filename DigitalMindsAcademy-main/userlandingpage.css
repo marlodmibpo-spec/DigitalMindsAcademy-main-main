@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+}
+
+body{
+background:#e4e8ee;
+height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* HEADER */
+
+.topbar{
+background:linear-gradient(90deg,#b0bf00 0%,#6f7f12 45%,#081c3f 100%);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 25px;
+color:white;
+}
+
+.brand img{
+height:40px;
+}
+
+/* NAV */
+
+.nav{
+display:flex;
+gap:20px;
+}
+
+.nav a{
+text-decoration:none;
+color:white;
+padding:8px 18px;
+border-radius:8px;
+font-size:14px;
+}
+
+.nav .active{
+background:#c6d800;
+color:black;
+}
+
+/* PROFILE */
+
+.profile{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.profile img{
+width:35px;
+height:35px;
+border-radius:50%;
+}
+
+/* HERO */
+
+.hero{
+flex:1;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:60px 100px;
+background:linear-gradient(180deg,#eef1c5,#ffffff);
+}
+
+/* LEFT SIDE */
+
+.hero-left{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.academy-logo{
+width:480px;
+}
+
+/* BUTTON */
+
+.start-btn{
+background:#b0bf00;
+border:none;
+padding:14px 28px;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:10px;
+font-size:15px;
+width:max-content;
+}
+
+.start-btn:hover{
+background:#9ead00;
+}
+
+/* RIGHT SIDE */
+
+.hero-right{
+display:flex;
+justify-content:flex-end;
+}
+
+.assistant{
+width: 600px;
+}
